@@ -6,6 +6,7 @@ data/
 
 # Cache and compiled files
 __pycache__/
+.pytest_cache/
 *.pth
 .DS_Store
 

@@ -7,6 +7,7 @@ import torchvision.transforms.functional as TF
 
 from src.model import build_model
 from src.metrics import to_prediction, iou_score
+from tests.conftest import needs_data, needs_model
 
 SEG = Path("data/Segmentation")
 WEIGHTS = Path("models/best_model.pth")
@@ -38,6 +39,8 @@ def predict(model, image_id):
         return to_prediction(model(x)["out"])[0]
 
 
+@needs_data
+@needs_model
 def test_mean_iou_above_threshold(model):
     scores = []
     for image_id in load_ids():
@@ -55,6 +58,8 @@ def test_mean_iou_above_threshold(model):
     assert mean_iou >= MIN_MEAN_IOU, f"Mean IoU dropped to {mean_iou:.3f}"
 
 
+@needs_data
+@needs_model
 def test_no_false_positives_on_empty_images(model):
     for image_id in load_ids():
         truth = Image.open(SEG / "masks" / f"{image_id}.png").convert("L")
