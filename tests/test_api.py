@@ -1,7 +1,7 @@
 from pathlib import Path
 from fastapi.testclient import TestClient
 from src.api import app
-from tests.conftest import needs_data
+from tests.conftest import needs_data, needs_model
 
 SEG = Path("data/Segmentation")
 client = TestClient(app)
@@ -20,6 +20,7 @@ def test_rejects_non_image():
 
 
 @needs_data
+@needs_model
 def test_predict_returns_expected_fields():
     with open(SEG / "images" / "valid" / "9862_Acanthopagrus_palmaris_f000090.jpg", "rb") as f:
         files = {"file": ("fish.jpg", f.read(), "image/jpeg")}
