@@ -1,0 +1,10 @@
+valid/7623_F2_f000470
+valid/7482_F2_f000580
+empty/9907_no_fish_2_f000340 
+valid/9862_Acanthopagrus_palmaris_f000090
+valid/7117_Lutjanus_a_testclip_far_away_short_f000090 
+valid/9852_Acanthopagrus_palmaris_f000020
+valid/9894_lutjanus_johnii_f000000
+valid/7623_F2_f000480
+valid/9866_acanthopagrus_and_caranx_f000160
+empty/9866_no_fish_f000260
