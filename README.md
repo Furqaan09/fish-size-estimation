@@ -152,6 +152,14 @@ Those 90 empty images come from habitats the model trained on.
 
 Requires the `Segmentation` subset of dataset from the link above, extracted to `data/Segmentation`.
 
+Download the trained weights into `models/`.
+
+```bash
+mkdir -p models
+curl -L -o models/best_model.pth \
+  https://github.com/Furqaan09/fish-segmentation/releases/download/v1.0/best_model.pth
+```
+
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
