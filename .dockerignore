@@ -1,0 +1,9 @@
+.venv/
+data/
+notebooks/
+plots/
+__pycache__/
+*.ipynb
+.git/
+.DS_Store
+NOTES.md
